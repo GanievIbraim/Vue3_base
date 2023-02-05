@@ -1,6 +1,16 @@
 <template>
-  <h1>Hello world! I'm Ibraim.</h1>
+  <div class="block">{{ name }}</div>
+	<div class="block">{{ surn }}</div>
 </template>
 
 <script>
+export default {
+	data() {
+	return {
+		name: 'Ibraim',
+		surn: 'Ganiev',
+	}
+}
+}
+
 </script>
