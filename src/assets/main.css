@@ -24,3 +24,13 @@ p{
   color: black;
 }
 
+button{
+  margin-left: 690px;
+  margin-top: 7px;
+  font-family: Consolas;
+  font-size: 1.5em;
+  background-color: white;
+  border: none;
+  width: 60px;
+  height: 35px;
+}

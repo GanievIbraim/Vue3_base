@@ -1,5 +1,4 @@
 <template>
-  {{ show() }}
 
   <div id='cmd_head'>
   <p>Console</p>
@@ -8,6 +7,7 @@
   <div id='cmd'>
     <p>> Hello!</p>
   </div>
+  <button @mouseover="show">OK</button>
 </template>
 
 <script>
