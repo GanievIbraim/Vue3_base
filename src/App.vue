@@ -1,21 +1,17 @@
 <template>
-	<div>
-    <h1>Квадрат числа {{ num }} = {{ num * num }}</h1>
-  </div>
-
-  <div>
-    <h1>Сумма чисел {{ num1}}, {{num2}}, {{num3}} = {{ num1 + num2 + num3 }}</h1>
-  </div>
+	<p>{{ arr[0] }}</p>
+  <p>{{ arr[1] }}</p>
+  <p>{{ arr[2] }}</p>
+  <p>{{ arr[3] }}</p>
+  <p>> RESULT: {{ num[0] + num[1] + num[2] }}</p>
 </template>
 
 <script>
 export default {
 	data() {
 	  return {
-		  num: 11,
-      num1: 27,
-		  num2: 9,
-		  num3: 2003,
+		  arr: ['> 25%', '> 50%', '> 100%', '> COMPLETE!'],
+      num: [1, 2, 3],
 	  }
   } 
 }

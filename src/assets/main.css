@@ -1,14 +1,13 @@
 @import './base.css';
 
-body, div {
+body{
   display: flex;
   place-items: center;
   justify-content: center;
 }
 
-div{
-  border-radius: 15px;
-  
+p{
   color: #54916c;
-  margin: 20px;
+  font-size: 3em;
+  margin: -15px;
 }
