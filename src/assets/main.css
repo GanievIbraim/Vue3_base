@@ -7,15 +7,8 @@ body, div {
 }
 
 div{
-  border-radius: 50%;
-  width: 300px;
-  height: 300px;
-  border: 1px solid #54916c;
-}
-
-a{
-  text-decoration: none;
+  border-radius: 15px;
+  
   color: #54916c;
-  font-weight: 300;
-  font-size: 4em;
+  margin: 20px;
 }
