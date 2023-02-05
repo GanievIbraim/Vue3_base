@@ -1,17 +1,18 @@
 <template>
-	<p>{{ arr[0] }}</p>
-  <p>{{ arr[1] }}</p>
-  <p>{{ arr[2] }}</p>
-  <p>{{ arr[3] }}</p>
-  <p>> RESULT: {{ num[0] + num[1] + num[2] }}</p>
+  <div id='cmd_head'>
+  <p>Console</p>
+  </div>
+
+  <div id='cmd'>
+    <p>> RESULT: {{ obj.x + obj.y + obj.z + obj.w}}</p>
+  </div>
 </template>
 
 <script>
 export default {
 	data() {
 	  return {
-		  arr: ['> 25%', '> 50%', '> 100%', '> COMPLETE!'],
-      num: [1, 2, 3],
+		  obj: {x: 444, y: 333, z: 222, w: 1},
 	  }
   } 
 }

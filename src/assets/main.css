@@ -7,7 +7,20 @@ body{
 }
 
 p{
-  color: #54916c;
-  font-size: 3em;
-  margin: -15px;
+  font-size: 2em;
 }
+
+#cmd{
+  padding: 5px;
+  color: #54916c;
+  background-color: black;
+  width: 750px;
+  height: 350px;
+}
+
+#cmd_head{
+  padding-left: 5px;
+  background-color: white;
+  color: black;
+}
+
