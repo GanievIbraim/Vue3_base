@@ -6,14 +6,12 @@
 
   <div id='cmd'>
     <p>> Hello!</p>
-    <p>> Цена продукта: {{ cost }}</p>
-    <p>> Количество: {{ amount }}</p>
-    <p>> Сумма: {{ price }}</p>
-    <p>> Нажмите на кнопку, чтобы добавить к количеству</p>
+    <p>> Нажмите на кнопку!</p>
   </div>
-  <button @click="show(1)">1</button>
-  <button @click="show(2)">2</button>
-  <button @click="show(3)">3</button>
+
+  <a :href="link"><button  @click="show_1()">1</button></a>
+  <a :href="link" :target="tar"><button  @click="show_2()">2</button></a>
+
 </template>
 
 <script>
@@ -21,20 +19,22 @@
 export default {
 	data() {
     return {
-      cost: 43,
-      amount: 5,
-	  }
-  },
-
-  computed: {
-    price: function() {
-		  return this.cost * this.amount;
+      link: "https://learn.javascript.ru/introduction-browser-events",
+      count: 0,
+      tar: "_blank",
 	  }
   },
 
   methods: {
-    show: function(param) {
-		  this.amount += param;
+    show_1: function() {
+        this.link = "#no_scroll";
+	  },
+    show_2: function() {
+      if (this.count > 0) {
+        this.link = "#no_scroll";
+        this.tar = "_self";
+      }
+      this.count += 1;
 	  }
   }
 }
