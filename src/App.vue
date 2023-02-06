@@ -7,24 +7,46 @@
   <div id='cmd'>
     <p>> Hello!</p>
   </div>
-  <button @click="show">OK</button>
+  {{ show() }}
+  <!-- <button @click="show">OK</button> -->
 </template>
 
 <script>
-let now = new Date();
+let arr = prompt('Введите чсило от 1 до 7!')
+let week =[
+      'Понедельник',
+      'Вторник',
+      'Среда',
+      'Четверг',
+      'Пятница',
+      'Суббота',
+      'Воскресенье'
+];
 
 export default {
 	data() {
     return {
-		num1: 23,
-		num2: 100,
+      days: week,
+      param: Number(arr),
 	  }
   },
 
   methods: {
 	  show: function() {
-		  alert(this.num1 + this.num2);
-	  }
+		  let day = this.cape(this.param);
+      let now = new Date();
+
+      alert("Ваш день недели: " + day);
+      alert("Cегодняшний день недели: " + week[now.getDay() - 1]);
+	  },
+
+    cape: function(num) {
+      if (num > 7 || num < 1){
+        return 'Число не входит в диапазон от 1 до 7';
+      }
+      return this.days[num-1];    
+    }
   }
 }
+
 </script>
