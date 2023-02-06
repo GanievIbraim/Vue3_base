@@ -6,11 +6,12 @@
 
   <div id='cmd'>
     <p>> Hello!</p>
-    <p>> Нажмите на кнопку!</p>
+    <p>> Нажмите на кнопку, чтобы изменить переменную visible!</p>
+    <p v-if="visible">> Вы видите этот абзац, при этом visible = true.</p>
+    <p v-if="!visible">> Вы видите этот абзац, при этом visible = false.</p>
   </div>
 
-  <a :href="link"><button  @click="show_1()">1</button></a>
-  <a :href="link" :target="tar"><button  @click="show_2()">2</button></a>
+  <button  @click="show">1</button>
 
 </template>
 
@@ -19,23 +20,14 @@
 export default {
 	data() {
     return {
-      link: "https://learn.javascript.ru/introduction-browser-events",
-      count: 0,
-      tar: "_blank",
+      visible: false,
 	  }
   },
 
   methods: {
-    show_1: function() {
-        this.link = "#no_scroll";
-	  },
-    show_2: function() {
-      if (this.count > 0) {
-        this.link = "#no_scroll";
-        this.tar = "_self";
-      }
-      this.count += 1;
-	  }
+    show: function() {
+      this.visible = !(this.visible) &&  true;
+    }
   }
 }
 
