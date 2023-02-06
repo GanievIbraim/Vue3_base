@@ -6,46 +6,31 @@
 
   <div id='cmd'>
     <p>> Hello!</p>
+    <p>> Для получения квдарта числа нажмите на кнопку!</p>
   </div>
-  {{ show() }}
-  <!-- <button @click="show">OK</button> -->
+  <button @click="show('0')">??</button>
+  <button @click="show('2')">2</button>
+  <button @click="show('3')">3</button>
 </template>
 
 <script>
-let arr = prompt('Введите чсило от 1 до 7!')
-let week =[
-      'Понедельник',
-      'Вторник',
-      'Среда',
-      'Четверг',
-      'Пятница',
-      'Суббота',
-      'Воскресенье'
-];
 
 export default {
 	data() {
     return {
-      days: week,
-      param: Number(arr),
 	  }
   },
 
   methods: {
-	  show: function() {
-		  let day = this.cape(this.param);
-      let now = new Date();
-
-      alert("Ваш день недели: " + day);
-      alert("Cегодняшний день недели: " + week[now.getDay() - 1]);
-	  },
-
-    cape: function(num) {
-      if (num > 7 || num < 1){
-        return 'Число не входит в диапазон от 1 до 7';
+	  show: function(param) {
+      let num = Number(param);
+      if (num == 0){
+        num = Math.round(Math.random(100) * 100);
+        alert("Квадрат числа " + num + " = " + (num * num));
+        return;
       }
-      return this.days[num-1];    
-    }
+      alert("Квадрат числа " + num + " = " + (num * num));
+	  },
   }
 }
 
