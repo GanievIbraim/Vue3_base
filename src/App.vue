@@ -5,10 +5,7 @@
   </div>
 
   <div id='cmd'>
-    <p>> Hello!</p>
-    <p>> Нажмите на кнопку, чтобы изменить переменную visible!</p>
-    <p v-if="visible">> Вы видите этот абзац, при этом visible = true.</p>
-    <p v-if="!visible">> Вы видите этот абзац, при этом visible = false.</p>
+    <p v-if="!hidden">> Hello :)</p>
   </div>
 
   <button  @click="show">1</button>
@@ -20,13 +17,12 @@
 export default {
 	data() {
     return {
-      visible: false,
+      hidden: true,
 	  }
   },
 
   methods: {
     show: function() {
-      this.visible = !(this.visible) &&  true;
     }
   }
 }
