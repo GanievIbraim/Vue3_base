@@ -1,31 +1,36 @@
 <template>
 
   <button  @click="one">PRESS ME</button>
-  <p v-if="isAdmin" style="color: rgb(83, 199, 91);">YES :)</p>
-  <p v-else style="color: rgb(238, 87, 87);"> NO :(</p>
 
-  <div id='cmd_head' v-if="false">
+  <div id='cmd_head'>
   <p>Console</p>
   </div>
 
-  <div id='cmd' v-if="false">
-    <p >> Hello :)</p>
+  <div id='cmd'>
+    <p v-if="day === 'Понедельник'">> Понедельник</p>
+    <p v-if="day === 'Вторник'">> Вторник</p>
+    <p v-if="day === 'Среда'">> Среда</p>
+    <p v-if="day === 'Четверг'">> Четверг</p>
+    <p v-if="day === 'Пятница'">> Пятница</p>
+    <p v-if="day === 'Суббота'">> Суббота</p>
+    <p v-if="day === 'Воскресенье'">> Воскресенье</p>
   </div>
 
 </template>
 
 <script>
+var days =["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"];
+var now = new Date();
 
 export default {
 	data() {
     return {
-      isAdmin: true,
+      day: days[now.getDay()],
 	  }
   },
 
   methods: {
     one: function() {
-      this.isAdmin = !this.isAdmin;
     },
   }
 }
