@@ -7,7 +7,7 @@
   <div id='cmd'>
     <p>> Hello!</p>
   </div>
-  <button @mouseover="show">OK</button>
+  <button @click="show">OK</button>
 </template>
 
 <script>
@@ -15,10 +15,15 @@ let now = new Date();
 
 export default {
 	data() {
+    return {
+		num1: 23,
+		num2: 100,
+	  }
   },
+
   methods: {
 	  show: function() {
-		  alert(now);
+		  alert(this.num1 + this.num2);
 	  }
   }
 }
