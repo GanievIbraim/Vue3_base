@@ -1,16 +1,24 @@
 <template>
-  <button  @click="hide" v-if="visible">HIDE</button>
-  <button  @click="show" v-if="!visible">SHOW</button>
 
-  <div id='cmd_head' v-if="visible">
+  <button  @click="one">ONE</button>
+  <p v-if="visible_1" style="color: rgb(238, 87, 87);">Red</p>
+  <br>
+
+  <button  @click="two">TWO</button>
+  <p v-if="visible_2" style="color: rgb(83, 199, 91);">Green</p>
+  <br>
+  
+  <button  @click="three" >THREE</button>
+  <p v-if="visible_3" style="color: rgb(83, 141, 199);">Blue</p>
+
+  <div id='cmd_head' v-if="false">
   <p>Console</p>
   </div>
 
-  <div id='cmd' v-if="visible">
+  <div id='cmd' v-if="false">
     <p >> Hello :)</p>
   </div>
 
-  
 </template>
 
 <script>
@@ -18,16 +26,21 @@
 export default {
 	data() {
     return {
-      visible: true,
+      visible_1: true,
+      visible_2: true,
+      visible_3: true,
 	  }
   },
 
   methods: {
-    show: function() {
-      this.visible = true;
+    one: function() {
+      this.visible_1 = !this.visible_1;
     },
-    hide: function() {
-      this.visible = false;
+    two: function() {
+      this.visible_2 = !this.visible_2;
+    },
+    three: function() {
+      this.visible_3 = !this.visible_3;
     }
   }
 }
