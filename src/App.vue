@@ -8,7 +8,7 @@
 
   <div id='cmd'>
     <ul>
-      <li v-for="(elem, key) in arr"> Ключу {{ key }} соответсвует значение {{ elem }}</li>
+      <li v-for="(elem, key, index) in obj">> {{ key }} - {{ elem }} - {{ index + 1 }} </li>
     </ul>
   </div>
 
@@ -18,7 +18,11 @@
 export default {
 	data() {
 	  return {
-		  arr: ['x', 'y', 'z'],
+		  obj: {
+            user1: '100$',
+            user2: '200$',
+            user3: '300$',
+          },
 	  }
   },
 
