@@ -7,8 +7,14 @@
   </div>
 
   <div id='cmd'>
-    <ul>
-      <li v-for="(elem, key, index) in obj">> {{ key }} - {{ elem }} - {{ index + 1 }} </li>
+    <div v-for="elem in items">
+	    <p>> {{ elem }}</p>
+	    <p class="divider"></p>
+    </div>
+
+    <ul v-for="elem in items">
+      <li>{{ elem }}</li>
+      <li class="divider"></li>
     </ul>
   </div>
 
@@ -18,11 +24,7 @@
 export default {
 	data() {
 	  return {
-		  obj: {
-            user1: '100$',
-            user2: '200$',
-            user3: '300$',
-          },
+		  items: [1, 2, 3],
 	  }
   },
 
