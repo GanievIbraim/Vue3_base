@@ -16,7 +16,7 @@ body{
   color: #54916c;
   background-color: black;
   width: 750px;
-  height: 350px;
+  padding-bottom: 25px;
 }
 
 #cmd_head{
