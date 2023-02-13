@@ -7,8 +7,12 @@
   </div>
 
   <div id='cmd'>
-    <p>> Задание 1</p>
-    <p v-for="num in 30">Абзац номер {{ num }}</p>    
+    <p>> Задание 1. Вывести только положительные числа.</p>
+    <template v-for="elem in items">
+			<p v-if="elem > 0">
+				> {{ elem }}
+      </p>
+		</template>  
   </div>
 
 </template>
@@ -17,7 +21,7 @@
 export default {
 	data() {
 	  return {
-		  
+		  items: [1, -2, 3, -4, 5],
 	  }
   },
 
