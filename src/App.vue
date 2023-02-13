@@ -7,10 +7,8 @@
   </div>
 
   <div id='cmd'>
-		<div id="block" v-for="elem in items">{{ elem**2 }}</div>
-    <p>> Следующее задание</p>
     <ul>
-      <li v-for="elem in items">{{ elem}}</li>
+      <li v-for="(elem, key) in arr"> Ключу {{ key }} соответсвует значение {{ elem }}</li>
     </ul>
   </div>
 
@@ -20,7 +18,7 @@
 export default {
 	data() {
 	  return {
-		  items: [1, 2, 3, 4, 5],
+		  arr: ['x', 'y', 'z'],
 	  }
   },
 
