@@ -8,11 +8,9 @@
 
   <div id='cmd'>
     <p>> Задание 1. Вывести только положительные числа.</p>
-    <template v-for="elem in items">
-			<p v-if="elem > 0">
-				> {{ elem }}
-      </p>
-		</template>  
+    <ul>
+      <li v-for="product in products" :key="product.id">{{ product.name }}</li>
+    </ul>  
   </div>
 
 </template>
@@ -21,7 +19,20 @@
 export default {
 	data() {
 	  return {
-		  items: [1, -2, 3, -4, 5],
+		  products: [
+        {
+          id: 1,
+          name: 'Product_1',
+        },
+        {
+          id: 2,
+          name: 'Product_2',
+        },
+        {
+          id: 3,
+          name: 'Product_3',
+        },
+		  ],
 	  }
   },
 
