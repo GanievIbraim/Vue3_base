@@ -7,11 +7,7 @@
   </div>
 
   <div id='cmd'>
-    <template v-if="isAuth">
-		  <p>> Абзац номер 1</p>
-		  <p>> Paragraph number 2</p>
-		  <p>> la la</p>
-    </template>
+		<p v-show="isAuth">> Абзац номер 1</p>
   </div>
 
 </template>
