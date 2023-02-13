@@ -7,31 +7,23 @@
   </div>
 
   <div id='cmd'>
-    <p v-if="day === 'Понедельник'">> Понедельник</p>
-    <p v-if="day === 'Вторник'">> Вторник</p>
-    <p v-if="day === 'Среда'">> Среда</p>
-    <p v-if="day === 'Четверг'">> Четверг</p>
-    <p v-if="day === 'Пятница'">> Пятница</p>
-    <p v-if="day === 'Суббота'">> Суббота</p>
-    <p v-if="day === 'Воскресенье'">> Воскресенье</p>
+    <p v-if="age <= 18">> Подросток</p>
+	  <p v-else-if=" 19 < age < 25">> Молодой человек</p>
+	  <p v-else-if="age >= 26">> Мужчина</p>
+	  <p v-else>error</p>
   </div>
 
 </template>
 
 <script>
-var days =["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"];
-var now = new Date();
-
 export default {
 	data() {
     return {
-      day: days[now.getDay()],
+      age: 25,
 	  }
   },
 
   methods: {
-    one: function() {
-    },
   }
 }
 
