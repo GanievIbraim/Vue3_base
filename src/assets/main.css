@@ -10,12 +10,8 @@ body{
   justify-content: center;
 }
 
-p{
-  font-size: 2em;
-}
-
 #cmd{
-  font-size: 0.6em;
+  font-size: 1em;
   padding: 5px;
   color: #54916c;
   background-color: black;
@@ -39,4 +35,11 @@ button{
   border: none;
   width: 120px;
   height: 35px;
+}
+
+#block{
+  border: 1px dashed #54916c;
+  width: 2em;
+  text-align: center;
+  margin-top: 5px;
 }

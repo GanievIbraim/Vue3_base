@@ -7,7 +7,11 @@
   </div>
 
   <div id='cmd'>
-		<p v-show="isAuth">> Абзац номер 1</p>
+		<div id="block" v-for="elem in items">{{ elem**2 }}</div>
+    <p>> Следующее задание</p>
+    <ul>
+      <li v-for="elem in items">{{ elem}}</li>
+    </ul>
   </div>
 
 </template>
@@ -15,8 +19,8 @@
 <script>
 export default {
 	data() {
-    return {
-      isAuth: true,
+	  return {
+		  items: [1, 2, 3, 4, 5],
 	  }
   },
 
