@@ -7,7 +7,7 @@
   </div>
 
   <div id='cmd'>
-    <p>> Задание 36. Стилизация компонента в фреймворке Vue.</p> 
+    <p :class="cssClasses">> Задание 37. Атрибут class в фреймворке Vue.</p> 
   </div>
 
 </template>
@@ -16,6 +16,7 @@
 export default {
 	data() {
 	  return {
+      cssClasses: "txt",
 	  }
   },
 
@@ -26,7 +27,7 @@ export default {
 </script>
 
 <style>
-  p{
+  .txt{
     font-family: Consolas;
     font-size: 1.5em;
     color: #54916c;
