@@ -7,7 +7,7 @@
   </div>
   
   <div id='cmd'>
-    <p :class="{active: true, valid: false}">> Задание 40. Теперь этот абзац тоже виден.</p>
+    <p :class="{active: isDisabled, valid: isValid}">> Задание 40. Теперь этот абзац тоже виден.</p>
   </div>
 
 </template>
@@ -16,6 +16,8 @@
 export default {
 	data() {
 	return {
+    isValid: true,
+		isDisabled: true,
 	}
 },
 
