@@ -7,7 +7,8 @@
   </div>
   
   <div id='cmd'>
-    <p :class="{active: isDisabled, valid: isValid}">> Задание 40. Теперь этот абзац тоже виден.</p>
+    <p :style="{color: 'rgb(4, 194, 118)', 'background-color': 'yellow'}">> Задание 42. Зеленый шрифт с желтым фоном.</p>
+    <p :style="{'font-style': 'italic', 'font-weight': 'bold'}">> Задание 42. Абзац жирный и курсивный.</p>
   </div>
 
 </template>
@@ -16,8 +17,6 @@
 export default {
 	data() {
 	return {
-    isValid: true,
-		isDisabled: true,
 	}
 },
 
@@ -28,12 +27,5 @@ export default {
 </script>
 
 <style>
-  .active{
-    font-family: Consolas;
-    font-size: 1.5em;
-    color: rgb(4, 194, 118);
-  }
-  .valid{
-	  text-decoration: underline;
-}
+
 </style>
