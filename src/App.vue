@@ -7,8 +7,13 @@
   </div>
   
   <div id='cmd'>
-    <p :style="{color: 'rgb(4, 194, 118)', 'background-color': 'yellow'}">> Задание 42. Зеленый шрифт с желтым фоном.</p>
-    <p :style="{'font-style': 'italic', 'font-weight': 'bold'}">> Задание 42. Абзац жирный и курсивный.</p>
+    <p>> Введите текст</p>
+    <input v-model="task2">
+    <p>> {{task2}}</p>
+
+    <p>> Введите число</p>
+    <input v-model="task3">
+    <p>> {{ task3 * task3}}</p>
   </div>
 
 </template>
@@ -17,6 +22,8 @@
 export default {
 	data() {
 	return {
+    task3: 'hello',
+    task2: 'qwert',
 	}
 },
 
@@ -27,5 +34,10 @@ export default {
 </script>
 
 <style>
-
+  #cmd p{
+    font-family: Consolas;
+    font-size: 1.2em;
+    color: rgba(0, 199, 76, 0.709);
+    text-transform: uppercase;
+  }
 </style>
