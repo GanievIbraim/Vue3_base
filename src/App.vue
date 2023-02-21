@@ -7,7 +7,7 @@
   </div>
 
   <div id='cmd'>
-    <p :class="cssClasses">> Задание 37. Атрибут class в фреймворке Vue.</p> 
+    <p :class="obj">> Задание 38. Объект с CSS классами в Vue.</p> 
   </div>
 
 </template>
@@ -16,7 +16,10 @@
 export default {
 	data() {
 	  return {
-      cssClasses: "txt",
+      obj: {
+			  done: true,
+			  selected:  false,
+		  },
 	  }
   },
 
@@ -27,9 +30,12 @@ export default {
 </script>
 
 <style>
-  .txt{
+  .done{
     font-family: Consolas;
     font-size: 1.5em;
+    color: rebeccapurple;
+  }
+  .selected{
     color: #54916c;
-}
+  }
 </style>
