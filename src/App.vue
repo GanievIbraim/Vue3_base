@@ -7,11 +7,17 @@
   </div>
   
   <div id='cmd'>
-    <p>> Task 1. Выберите день недели.</p>
-    <input v-bind:disabled="isDisabled">
-    <br>
-    <input type="checkbox" v-model="isDisabled"> <span>Заблокировать input</span>
+    <p>> Task 1. Введите текст.</p>
+    <input v-on:keypress.enter="submit" v-model="txt">
+    <p>{{ task1 }}</p>
 
+    <p>> Task 2. Нажмите на ссылку.</p>
+    <a @click.ctrl="link">Press me + CTRL</a>
+    <p>> {{ task2 }}</p>
+
+    <p>> Task 3. Нажмите на ссылку.</p>
+    <a @click.left="link1" @click.right="link2" @click.middle="link3">Press me</a>
+    <p>> {{ task3 }}</p>
   </div>
 
 </template>
@@ -22,14 +28,30 @@ let date = new Date();
 export default {
 	data() {
     return {
-      isDisabled: true,
+      task1: "",
+      txt: "",
+
+      task2: "",
+      task3: "",
     }
   },
 
   methods: {
-    block: function() {
-      this.isDisabled = !this.isDisabled;
-    }
+    submit: function() {
+      this.task1 = this.txt;
+    },
+    link: function() {
+      this.task2 = "Вы нажали на ссылку с зажатым CTRL.";
+    },
+    link1: function() {
+      this.task3 = "left";
+    },
+    link2: function() {
+      this.task3 = "right";
+    },
+    link3: function() {
+      this.task3 = "middle";
+    },
   }
 }
 
