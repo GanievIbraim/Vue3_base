@@ -1,6 +1,6 @@
 <template>
 
-  <button @click="block">Block</button>
+  <button @click="addItem">Press me!</button>
 
   <div id='cmd_head'>
   <p>Console</p>
@@ -8,16 +8,12 @@
   
   <div id='cmd'>
     <p>> Task 1. Введите текст.</p>
-    <input v-on:keypress.enter="submit" v-model="txt">
-    <p>{{ task1 }}</p>
-
-    <p>> Task 2. Нажмите на ссылку.</p>
-    <a @click.ctrl="link">Press me + CTRL</a>
-    <p>> {{ task2 }}</p>
-
-    <p>> Task 3. Нажмите на ссылку.</p>
-    <a @click.left="link1" @click.right="link2" @click.middle="link3">Press me</a>
-    <p>> {{ task3 }}</p>
+    <input v-model="newItem">
+    <ul>
+      <li v-for="(item, index) in arr" :key="index">
+			  {{ item }}
+		  </li>
+    </ul>
   </div>
 
 </template>
@@ -28,30 +24,15 @@ let date = new Date();
 export default {
 	data() {
     return {
-      task1: "",
-      txt: "",
-
-      task2: "",
-      task3: "",
+      newItem: '',
+      arr: ['lala', 'haha', 'hola', 'Mavile'],
     }
   },
 
   methods: {
-    submit: function() {
-      this.task1 = this.txt;
-    },
-    link: function() {
-      this.task2 = "Вы нажали на ссылку с зажатым CTRL.";
-    },
-    link1: function() {
-      this.task3 = "left";
-    },
-    link2: function() {
-      this.task3 = "right";
-    },
-    link3: function() {
-      this.task3 = "middle";
-    },
+    addItem: function() {
+		  this.arr.unshift(this.newItem);
+	  }
   }
 }
 
