@@ -7,18 +7,16 @@
   </div>
   
   <div id='cmd'>
-    <p>> Task 1. Выберете родной язык.</p>
-    <input name="radio" type="radio" v-model="choice" value="rus"> 
-    <span> Русский</span><br>
-
-	  <input name="radio" type="radio" v-model="choice" value="tat"> 
-    <span> Крымскотатарский</span><br>
-
-	  <input name="radio" type="radio" v-model="choice" value="eng">
-    <span> Английский</span><br>
-    <p v-if="choice == 'rus'">> Русский язык</p>
-    <p v-if="choice == 'tat'">> Къырымтатар тили</p>
-    <p v-if="choice == 'eng'">> English language</p>
+    <p>> Task 1. В каком городе вы живете.</p>
+    <select v-model="selected">
+		  <option>Симферополь</option>
+		  <option>Алушта</option>
+		  <option>Судак</option>
+      <option>Феодосия</option>
+      <option>Джанкой</option>
+	  </select>
+    
+    <p>> {{ selected }}</p>
     
   </div>
 
@@ -28,7 +26,7 @@
 export default {
 	data() {
     return {
-      choice: "",
+      selected: "",
     }
   },
 
