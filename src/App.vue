@@ -8,8 +8,18 @@
   
   <div id='cmd'>
     <p>> Task 1</p>
-    <input type="checkbox" v-model="checked">
-	  <p v-if="checked">> Вы видите этот абзац.</p>
+    <input type="checkbox" v-model="arr" value="Python"> <span>Python</span><br>
+	  <input type="checkbox" v-model="arr" value="Java"> <span>Java</span><br>
+	  <input type="checkbox" v-model="arr" value="JS"> <span>JS</span><br>
+    <input type="checkbox" v-model="arr" value="C++"> <span>C++</span><br>
+    <input type="checkbox" v-model="arr" value="C"> <span>C</span><br>
+    <input type="checkbox" v-model="arr" value="GO"> <span>GO</span><br>
+    <input type="checkbox" v-model="arr" value="Ruby"> <span>Ruby</span><br>
+    <p>> Количество:  {{ arr.length }}</p>
+    <p>> Cписок языков:</p>
+    <ul v-for="elem in arr">
+      <li>{{ elem }}</li>
+    </ul>
   </div>
 
 </template>
@@ -18,7 +28,7 @@
 export default {
 	data() {
     return {
-      checked: false,
+      arr: [],
     }
   },
 
@@ -32,7 +42,7 @@ export default {
 </script>
 
 <style>
-  #cmd p, li, textarea{
+  #cmd p, li, span{
     font-family: Consolas;
     font-size: 1.2em;
     color: rgba(0, 199, 76, 0.709);
