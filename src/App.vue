@@ -7,26 +7,40 @@
   </div>
   
   <div id='cmd'>
-    <p>> Task 1. В каком городе вы живете.</p>
+    <p>> Task 1. Выберите день недели.</p>
     <select v-model="selected">
-		  <option>Симферополь</option>
-		  <option>Алушта</option>
-		  <option>Судак</option>
-      <option>Феодосия</option>
-      <option>Джанкой</option>
+		  <option v-for="option in options">{{ option }}</option>
 	  </select>
-    
-    <p>> {{ selected }}</p>
+
+    <p>> Task 2. Выберите день, месяц, год.</p>
+    <select v-model="a">
+		  <option v-for="option in days">{{ option }}</option>
+	  </select>
+    <select v-model="b">
+		  <option v-for="option in month">{{ option }}</option>
+	  </select>
+    <select v-model="c">
+		  <option v-for="option in year">{{ option }}</option>
+	  </select>
     
   </div>
 
 </template>
 
 <script>
+let date = new Date();
+
 export default {
 	data() {
     return {
-      selected: "",
+      selected: "Понедельник",
+      options: ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'],
+      a: date.getDate(),
+      b: date.getMonth(),
+      c: date.getFullYear(),
+      days: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],
+      month: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      year: [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023]
     }
   },
 
