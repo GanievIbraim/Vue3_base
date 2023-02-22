@@ -1,6 +1,6 @@
 <template>
 
-  <button @click="press">Task 2</button>
+  <button @click="press">Task 1</button>
 
   <div id='cmd_head'>
   <p>Console</p>
@@ -8,14 +8,8 @@
   
   <div id='cmd'>
     <p>> Task 1</p>
-    <textarea v-model="text"></textarea>
-	  <p>{{ text }}</p>
-
-    <p>> Task 2</p>
-    <textarea v-model="txt"></textarea>
-    <ul v-for="elem in arr">
-      <li>{{ elem }}</li>
-    </ul>
+    <input type="checkbox" v-model="checked">
+	  <p v-if="checked">> Вы видите этот абзац.</p>
   </div>
 
 </template>
@@ -24,15 +18,13 @@
 export default {
 	data() {
     return {
-      text: 0,
-      txt: 0,
-      arr: [],
+      checked: false,
     }
   },
 
   methods: {
     press: function() {
-      this.arr = this.txt.split(" ");
+      this.checked = !this.checked;
     }
   }
 }
