@@ -7,21 +7,19 @@
   </div>
   
   <div id='cmd'>
-    <p>> Task 57. Введение. Работа с компонентами в Vue.</p>
+    <p>> Task 58. Введение. Работа с компонентами в Vue.</p>
+    <User />
   </div>
 
 </template>
 
 <script>
+import User from './components/Employee.vue'
 
 export default {
-	data() {
-    return {
-    }
-  },
-
-  methods: {
-  }
+  components: {
+		User
+	}
 }
 
 </script>
