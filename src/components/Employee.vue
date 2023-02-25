@@ -1,28 +1,27 @@
 <template>
     <template v-if="!isEdit">
-        <p>> {{ name }} </p>
-        <p>> {{ surn }} </p>
-        <button id="but" @click="edit">
-            edit
-        </button> <br>
+        <p>Пользователь номер {{ id }}</p>
+        <p>Имя: {{ name }}</p>
+        <p>Фамилия: {{ surn }}</p>
+        <button @click="edit">edit</button><br>
     </template>
     <template v-else>
         <input v-model="newName">
         <input v-model="newSurn">
-        <button id="but" @click="save">
+        <button @click="save">
             save
-        </button> <br>
+        </button>
     </template>
 </template>
 
 <script>
     export default {
+        emits: ['change'],
         props: {
             id: Number,
             name: String,
             surn: String,
         },
-        emits: ['change'],
         data() {
             return {
                 isEdit: false,

@@ -5,14 +5,16 @@
   </div>
 
   <div id='cmd'>
-    <p>> Task 69. Реактивное редактирование данных компонента.</p>
+    <p>> Task 70. Компонент для добавления данных в Vue.</p>
     <Employee v-for="user in users" :id="user.id" :name="user.name" :surn="user.surn" :key="user.id" @change="change" />
+    <UserForm @add="add" />
   </div>
 
 </template>
 
 <script>
   import Employee from './components/Employee.vue'
+  import UserForm from './components/UserForm.vue'
 
   export default {
     data() {
@@ -36,9 +38,19 @@
       }
     },
     components: {
-      Employee
+      Employee,
+      UserForm
     },
     methods: {
+      add(name, surn) {
+        let id = this.users.length + 1;
+
+        this.users.push({
+          id,
+          name,
+          surn
+        });
+      },
       change(id, name, surn) {
         this.users = this.users.map((user) => {
           if (user.id === id) {
@@ -53,17 +65,17 @@
 </script>
 
 <style>
-  #cmd p,
-  li,
-  span {
+  #cmd p {
     font-family: Consolas;
     font-size: 1.2em;
     color: rgba(0, 199, 76);
+    margin-left: 10px;
   }
 
   button,
   input {
-    margin-left: 20px;
+    margin-bottom: 10px;
+    margin-left: 10px;
     font-family: Consolas;
     font-size: 1.2em;
     background: none;
