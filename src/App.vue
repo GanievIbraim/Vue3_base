@@ -20,7 +20,7 @@ export default {
   data() {
     return {
       name: 'John',
-      salary: '2000',
+      salary: '3000',
       age: 25,
     }
   },

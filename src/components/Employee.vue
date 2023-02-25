@@ -6,7 +6,11 @@
 
 <script>
 	export default {
-        props: ['name_person', 'salary', 'age'],
+        props: {
+            name_person: String,
+            salary: String,
+            age: Number,
+        },
 		data() {
 			return {
 
