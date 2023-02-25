@@ -8,7 +8,7 @@
   
   <div id='cmd'>
     <p>> Task 60. Введение. Работа с компонентами в Vue.</p>
-    <Employee :arga="['John', 'Smit', 25]" />
+    <Employee :name_person="name" :salary="salary" :age="age" />
   </div>
 
 </template>
@@ -17,6 +17,13 @@
 import Employee from './components/Employee.vue'
 
 export default {
+  data() {
+    return {
+      name: 'John',
+      salary: '2000',
+      age: 25,
+    }
+  },
   components: {
 		Employee
 	}
