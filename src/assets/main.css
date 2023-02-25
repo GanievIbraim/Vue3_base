@@ -26,15 +26,6 @@ body{
   border: 1px solid white;
 }
 
-button{
-  margin-right: 15px;
-  margin-top: 5px;
-  font-size: 1.5em;
-  background-color: white;
-  border: none;
-  height: 35px;
-}
-
 #block{
   width: 2em;
   text-align: center;
