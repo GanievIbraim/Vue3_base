@@ -7,8 +7,8 @@
   </div>
   
   <div id='cmd'>
-    <p>> Task 59. Введение. Работа с компонентами в Vue.</p>
-    <Employee name="John" surn="Smit" age="25"/>
+    <p>> Task 60. Введение. Работа с компонентами в Vue.</p>
+    <Employee :arga="['John', 'Smit', 25]" />
   </div>
 
 </template>

@@ -1,10 +1,12 @@
 <template>
-	<p>> {{ name }} {{ surn }} {{ age }}</p>
+	<ul>
+      <li v-for="elem in arga">{{ elem }}</li>
+    </ul>
 </template>
 
 <script>
 	export default {
-        props: ['name', 'surn', 'age'],
+        props: ['arga'],
 		data() {
 			return {
 
