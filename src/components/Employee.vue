@@ -1,22 +1,23 @@
 <template>
-    <p> Работник номер {{ id }}</p>
-	<p> Name: {{ name }} </p>
-    <p> Salary: {{ salary }}$ </p>
-    <p>  Age: {{ age }}</p> <br>
+    <button @click="x">Button number 1</button>
+    <button @click="y">Button number 2</button>
 </template>
 
 <script>
-	export default {
-        props: {
-            name: String,
-            salary: Number,
-            id: Number,
-            age: Number,
-        },
-		data() {
-			return {
+    export default {
+        emits: ['first', 'second'],
+        data() {
+            return {
 
-			}
-		}
-	}
+            }
+        },
+        methods: {
+            x() {
+                this.$emit('first');
+            },
+            y() {
+                this.$emit('second');
+            }
+        }
+    }
 </script>
