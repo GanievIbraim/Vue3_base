@@ -5,8 +5,8 @@
   </div>
 
   <div id='cmd'>
-    <p>> Task 67. Испускание события в атрибуте в Vue.</p>
-    <Employee @func="func" />
+    <p>> Task 67. Реактивное удаление компонентов в Vue.</p>
+    <Employee v-for="user in users" :id="user.id" :name="user.name" :surn="user.surn" @remove="remove" :key="user.id" />
   </div>
 
 </template>
@@ -17,15 +17,32 @@
   export default {
     data() {
       return {
-
+        users: [{
+            id: 1,
+            name: 'name1',
+            surn: 'surn1'
+          },
+          {
+            id: 2,
+            name: 'name2',
+            surn: 'surn2'
+          },
+          {
+            id: 3,
+            name: 'name3',
+            surn: 'surn3'
+          },
+        ],
       }
     },
     components: {
       Employee
     },
     methods: {
-      func(name, salary) {
-        console.log(name, salary);
+      remove(id) {
+        this.users = this.users.filter((user) => {
+          return user.id !== id;
+        })
       }
     }
   }

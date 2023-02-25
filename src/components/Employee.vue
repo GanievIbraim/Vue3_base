@@ -1,11 +1,20 @@
 <template>
-    <button @click="$emit('func', 'Ibraim', '3000$')">Button number 1</button>
-
+	{{ name }}
+	{{ surn }}
+    <button @click="$emit('remove', id)">
+		remove
+	</button>
+    <br>
 </template>
 
 <script>
     export default {
-        emits: ['func'],
+        props: {
+            id: Number,
+            name: String,
+            surn: String,
+        },
+        emits: ['remove'],
         data() {
             return {
 
