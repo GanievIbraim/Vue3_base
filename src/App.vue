@@ -5,7 +5,7 @@
   </div>
 
   <div id='cmd'>
-    <p>> Task 65. Введение. Работа с компонентами в Vue.</p>
+    <p>> Task 67. Испускание события в атрибуте в Vue.</p>
     <Employee @func="func" />
   </div>
 
@@ -25,8 +25,8 @@
     },
     methods: {
       func(name, salary) {
-		console.log(name, salary);
-	}
+        console.log(name, salary);
+      }
     }
   }
 </script>

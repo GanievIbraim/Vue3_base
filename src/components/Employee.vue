@@ -1,5 +1,5 @@
 <template>
-    <button @click="x">Button number 1</button>
+    <button @click="$emit('func', 'Ibraim', '3000$')">Button number 1</button>
 
 </template>
 
@@ -11,10 +11,6 @@
 
             }
         },
-        methods: {
-            x() {
-                this.$emit('func', 'Ibraim', '2000$');
-            }
-        }
+        methods: {}
     }
 </script>
