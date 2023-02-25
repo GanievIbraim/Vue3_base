@@ -1,16 +1,15 @@
 <template>
 
-  <button @click="addItem">Press me!</button>
+  <button @click="">Press me!</button>
 
   <div id='cmd_head'>
   <p>Console</p>
   </div>
   
   <div id='cmd'>
-    <p>> Task 1. Введите текст.</p>
-    <input v-model="newItem">
+    <p>> Нажмите на элемент списка для удаления</p>
     <ul>
-      <li v-for="(item, index) in arr" :key="index">
+      <li v-for="(item, index) in arr" :key="index" @click="removeItem(index)">
 			  {{ item }}
 		  </li>
     </ul>
@@ -24,14 +23,13 @@ let date = new Date();
 export default {
 	data() {
     return {
-      newItem: '',
       arr: ['lala', 'haha', 'hola', 'Mavile'],
     }
   },
 
   methods: {
-    addItem: function() {
-		  this.arr.unshift(this.newItem);
+    removeItem: function(index) {
+		  this.arr.splice(index, 1);
 	  }
   }
 }
